@@ -12,7 +12,9 @@ You can run your application in dev mode that enables live coding using:
 ./mvnw compile quarkus:dev
 ```
 
-> ___NOTE:___  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+> ___NOTE:___  Quarkus now ships with a Dev UI, which is available in DEV mode only at http://localhost:8080/q/dev/.
+
+> ___NOTE:___ DEV mode will check the JDBC driver you have configured in your project. In this service, we used jdbc-postgresql, so it will start a Postgresql database: **Make sure to have Docker or Podman running!**
 
 ## Packaging and running the application
 
@@ -53,14 +55,12 @@ You can then execute your native executable with: `./target/customer-srvc-1.0-SN
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
-## Related Guides
+## Generate a Helm chart
 
-- RESTEasy Reactive ([guide](https://quarkus.io/guides/resteasy-reactive)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
+The application can be generate a Helm chart when running:
 
-## Provided Code
+```sh
+./mvnw clean package
+```
 
-### RESTEasy Reactive
-
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+The generated Helm chart are found in the target/helm/ folder.

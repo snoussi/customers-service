@@ -66,6 +66,7 @@ class CustomerResourceTest {
         JsonObject jsonObject =
                 Json.createObjectBuilder()
                         .add("email", "rick@test.com")
+                        .add("phone", "00 00 00 00")
                         .build();
 
         given()
