@@ -1,4 +1,4 @@
-# customer-service
+# customers-service
 
 This is a REST service to manager customer information
 
@@ -14,7 +14,7 @@ You can run your code in dev mode that enables live coding using:
 
 > ___NOTE:___  Quarkus now ships with a Dev UI, which is available in DEV mode only at http://localhost:8080/q/dev/.
 
-> ___NOTE:___ DEV mode will check the JDBC driver you have configured in your project. In this service, we used jdbc-postgresql, so it will start a Postgresql database: **Make sure to have Docker or Podman running!**
+> ___NOTE:___ DEV mode will check the JDBC driver you have configured in your project. In this service, we used jdbc-postgresql, so it will start a Postgresql database: __Make sure to have Docker or Podman running!__
 
 ## Packaging and running the service
 
