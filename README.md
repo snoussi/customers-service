@@ -1,12 +1,12 @@
-# customer-app
+# customer-service
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This is a REST service to manager customer information
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+See openapi.yaml for more information
 
-## Running the application in dev mode
+## Running the code in dev mode
 
-You can run your application in dev mode that enables live coding using:
+You can run your code in dev mode that enables live coding using:
 
 ```sh
 ./mvnw compile quarkus:dev
@@ -16,9 +16,9 @@ You can run your application in dev mode that enables live coding using:
 
 > ___NOTE:___ DEV mode will check the JDBC driver you have configured in your project. In this service, we used jdbc-postgresql, so it will start a Postgresql database: **Make sure to have Docker or Podman running!**
 
-## Packaging and running the application
+## Packaging and running the service
 
-The application can be packaged using:
+The service can be packaged using:
 
 ```sh
 ./mvnw package
@@ -27,40 +27,4 @@ The application can be packaged using:
 It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
 Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-
-```sh
-./mvnw package -Dquarkus.package.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using:
-
-```sh
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
-
-```sh
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/customer-srvc-1.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Generate a Helm chart
-
-The application can be generate a Helm chart when running:
-
-```sh
-./mvnw clean package
-```
-
-The generated Helm chart are found in the target/helm/ folder.
+The service is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.

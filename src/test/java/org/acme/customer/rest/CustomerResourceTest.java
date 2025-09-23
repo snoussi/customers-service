@@ -22,7 +22,7 @@ class CustomerResourceTest {
     void get() {
         given()
                 .when()
-                .get("/customer")
+                .get("/customers")
                 .then()
                 .statusCode(200)
                 .body("size()", equalTo(2))
@@ -34,7 +34,7 @@ class CustomerResourceTest {
     void getById() {
         given()
                 .when()
-                .get("/customer/id/1")
+                .get("/customers/1")
                 .then()
                 .statusCode(200)
                 .body("firstName", equalTo("Saul"))
@@ -55,7 +55,7 @@ class CustomerResourceTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(jsonObject.toString())
                 .when()
-                .post("/customer")
+                .post("/customers")
                 .then()
                 .statusCode(201);
     }
@@ -73,7 +73,7 @@ class CustomerResourceTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(jsonObject.toString())
                 .when()
-                .put("/customer/id/1")
+                .put("/customers/1")
                 .then()
                 .statusCode(204);
     }
@@ -83,7 +83,7 @@ class CustomerResourceTest {
     void deleteById() {
         given()
                 .when()
-                .delete("/customer/id/1")
+                .delete("/customers/1")
                 .then()
                 .statusCode(204);
     }
